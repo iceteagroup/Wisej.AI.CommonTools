@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>$(NetFxVersion);$(NetCoreVersion);$(NetCoreVersion)-windows;$(NetCoreVersion)-android;$(NetCoreVersion)-ios;$(NetCoreVersion)-maccatalyst;$(NetWindowsEmbeddedVersion)</TargetFrameworks>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace("-", "_"))</RootNamespace>
+		<NoWarn>CA1416</NoWarn>
+		<LangVersion>latest</LangVersion>
+		<AssemblyName>Wisej.AI.CommonTools</AssemblyName>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>extension.snk</AssemblyOriginatorKeyFile>
+		<NoStandardLib>true</NoStandardLib>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))'=='net'">
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Windows.Forms">
+			<Aliases>swf</Aliases>
+		</Reference>
+		<Reference Include="System.Data.DataSetExtensions" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Tools\_ToolsPrompts.ini" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Tools\_ToolsPrompts.ini" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Wisej-3" Version="3.5.*" NoWarn="NU1605" />
+		<PackageReference Include="Wisej-3-AI" Version="3.5.*" NoWarn="NU1605" />
+		<PackageReference Include="System.Net.Http" Version="4.3.4" NoWarn="NU1605" />
+		<PackageReference Include="Wisej-3-FullCalendar" Version="3.5.*" NoWarn="NU1605" />
+		<PackageReference Include="Wisej-3-ChartJS3" Version="3.5.*" NoWarn="NU1605" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Adapters\SmartChartJS3Adapter.cs">
+			<SubType>Component</SubType>
+		</Compile>
+		<Compile Update="Adapters\SmartFullCalendarAdapter.cs">
+			<SubType>Component</SubType>
+		</Compile>
+	</ItemGroup>
+
+</Project>
