@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.AI.CommonTools", "Wisej.AI.CommonTools\Wisej.AI.CommonTools.csproj", "{26F703AE-6AC9-49C1-96C3-23729E7E3C02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.AI.CommonTools.Package", "Wisej.AI.CommonTools.Package\Wisej.AI.CommonTools.Package.csproj", "{AED3448A-549F-CD4E-7C32-FDA8E847019D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{26F703AE-6AC9-49C1-96C3-23729E7E3C02} = {26F703AE-6AC9-49C1-96C3-23729E7E3C02}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

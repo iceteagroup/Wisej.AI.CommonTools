@@ -6,7 +6,7 @@
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RunPostBuildEvent>Always</RunPostBuildEvent>
-		<PackageId>Wisej-4-AI-CommonTools</PackageId>
+		<PackageId>Wisej-3-AI-CommonTools</PackageId>
 		<Product>Wisej-AI</Product>
 		<Version>$(FileVersion)</Version>
 		<PackageLicenseFile>EULA-3.2.txt</PackageLicenseFile>
